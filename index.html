@@ -20,7 +20,7 @@
     // main
     //footer  -->
     <!-- // section -> qualquer parte da página com o mesmo tema -->
-
+    <div class="container">
     <header>
       <div class="logo"></div>
       <nav>
@@ -40,7 +40,7 @@
         </h2>
         <button style="font-size: 16px">Garantir acesso</button>
         <figure>
-          <img src="public/landpage2/plataform-overall-image.png" alt="" />
+          <img src="public/landpage2/plataform-overall.png" alt="" />
           <!-- <figcaption>AAAAAAAAAAAAAAAAA</figcaption> -->
         </figure>
         <div class="users-sample">
@@ -249,8 +249,42 @@
           </div>
         </div>
       </section>
+      <section class="frequently-asked-questions">
+        <h1>Perguntas Frequentes</h1>
+        <div class="questions">
+          <div class="question-wrapper">
+            <div class="header">
+              <p class="question">A Waive usa o GPT-4?</p>
+              <img src="public/landpage2/chevron-up.svg" class="open-button" alt="Clique para ver a resposta" title="Clique para ver a resposta">
+            </div>
+            <p class="answer">Sim, a Waive utiliza as versões de IA mais recentes e potentes. Algumas funcionalidades do produto utilizam a tecnologia do GPT-4.</p>
+          </div>
+          <div class="question-wrapper">
+            <div class="header">
+              <p class="question">O que é uma IA auto-generativa?</p>
+              <img src="public/landpage2/chevron-up.svg" class="open-button" alt="Clique para ver a resposta" title="Clique para ver a resposta">
+            </div>
+            <p class="answer">A IA auto-generativa vai atuar te dando sugestões e completando o seu texto. Sempre que você parar de escrever, ela completa, e você pode aceitar, personalizar ou continuar escrevendo normalmente.</p>
+          </div>
+          <div class="question-wrapper">
+            <div class="header">
+              <p class="question">Funciona no celular?</p>
+              <img src="public/landpage2/chevron-up.svg" class="open-button" alt="Clique para ver a resposta" title="Clique para ver a resposta">
+            </div>
+            <p class="answer">Sim. A plataforma da Waive funciona normalmente no celular.</p>
+          </div>
+          <div class="question-wrapper">
+            <div class="header">
+              <p class="question">Os chats com GPT-4 são únicos pra cada documento?</p>
+              <img src="public/landpage2/chevron-up.svg" class="open-button" alt="Clique para ver a resposta" title="Clique para ver a resposta">
+            </div>
+            <p class="answer">Sim. Cada documento que você criar terá um chat único, onde tudo que você escrever no documento irá servir de contexto pra IA te dar melhores respostas.</p>
+          </div>
+        </div>
+      </section>
     </main>
 
+  </div>
     <footer class="sm-hide">
       <div class="copyright">
         <div class="logo">
@@ -289,5 +323,19 @@
         </div>
       </div>
     </footer>
+    <script>
+      
+      const questions = document.querySelectorAll('.question-wrapper'); 
+      questions.forEach((question) => {
+        const button = question.querySelector(".open-button");
+        button.addEventListener('click', () => toggleQuestionState(question))
+      })
+
+      function toggleQuestionState(wrapper_component) {
+        wrapper_component.classList.toggle('opened');
+      }
+
+
+    </script>
   </body>
 </html>

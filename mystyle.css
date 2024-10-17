@@ -23,6 +23,26 @@ html, body {
     display:block;
 } */
 
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 85%;
+    /* background-color: red; */
+}
+
+@media (min-width: 613px) {
+    .container {
+        max-width: 75%;
+    }
+}
+
 @media (max-width: 612px) {
     .sm-hide {
         display: none !important;
@@ -36,6 +56,13 @@ header {
     justify-content: space-around;
     height: 75px;
 }
+
+@media (min-width: 613px) {
+    header {
+        justify-content: space-between;
+    }
+}
+
 
 header .logo {
     height: 26.06px;
@@ -60,7 +87,7 @@ section:first-of-type h2 {
     }
 
     section:first-of-type h1 {
-        font-size: 51px; 
+        font-size: 51px;
         margin-bottom: 21px;
         width: 100%;
     }
@@ -74,6 +101,7 @@ header nav ul {
     display: flex;
     gap: 10px;
     list-style: none;
+    padding: 0px;
 }
 
 header nav li a {
@@ -83,7 +111,7 @@ header nav li a {
 
 button {
     background-color: var(--primary);
-    color: white; 
+    color: white;
     border: none;
     font-family: 'Inter';
     font-weight: 600;
@@ -101,7 +129,7 @@ button:active {
 
 
 header button, section:first-of-type button, section.features button {
-    border-radius:9px;
+    border-radius: 9px;
     padding: 13px 22px;
     font-size: 14px;
     box-shadow: 0px 4px 45px 0px rgba(32, 62, 255, 0.4);
@@ -156,17 +184,24 @@ section {
 }
 
 section:first-of-type figure {
-    width: 95%;
+    margin: 0;
+    width: 75%;
+    margin: 70px 0 70px 0;
+    padding: 50px;
 }
 
 @media (min-width: 613px) {
     section:first-of-type figure {
-        width: 75%;
+        /* width: 75%; */
+        width: 100%;
+        padding: 0px;
     }
 }
 
 section:first-of-type figure img {
     width: 100%;
+    box-shadow: 0px 4px 50px 0px rgba(0, 0, 0, 0.19);
+    border-radius: 20px;
 }
 
 /* section:first-of-type .users-sample {
@@ -189,6 +224,12 @@ section:first-of-type .users-sample p {
     font-size: 15px;
 }
 
+@media (min-width: 613px) {
+    section:first-of-type .users-sample p {
+        width: 70%;
+    }
+}
+
 section:first-of-type .users-sample img {
     height: 45px;
 }
@@ -208,12 +249,12 @@ section:first-of-type .users-sample img {
     section:first-of-type .users-sample img {
         height: 60px;
     }
-    
+
 }
 
 section.pricing-info .card {
     background: linear-gradient(white, white) padding-box,
-    linear-gradient(#203FFF, #A9D1FF) border-box;
+        linear-gradient(#203FFF, #A9D1FF) border-box;
     border: 4px solid transparent;
     border-radius: 10px;
     box-shadow: 0px 1.09px 2px 2px rgba(32, 63, 255, 0.13);
@@ -222,6 +263,12 @@ section.pricing-info .card {
     flex-direction: column;
     align-items: center;
     padding: 25px;
+}
+
+@media (max-width: 612px) {
+    section.pricing-info .card {
+        max-width: 85%;
+    }
 }
 
 
@@ -250,6 +297,7 @@ section.pricing-info .label {
 }
 
 
+
 section.pricing-info h1 {
     font-weight: 400;
     max-width: 275px;
@@ -265,7 +313,7 @@ section.pricing-info .product {
     color: white;
     padding: 40px 34px;
     border-radius: 25px;
-    max-width: 210px;
+    width: 210px;
 }
 
 section.pricing-info .product-header {
@@ -327,6 +375,22 @@ section.pricing-info .service-features li {
     color: var(--text-dark-secondary)
 }
 
+@media (min-width: 613px) {
+    section.pricing-info .product {
+        width: 250px;
+    }
+
+    section.pricing-info .price-info .current-price span {
+        font-size: 16px;
+    }
+
+    section.pricing-info .product-header {
+        font-size: 12.5px;
+    }
+
+
+}
+
 section.pricing-info .service-features li.highlight {
     color: white;
 }
@@ -337,13 +401,13 @@ section.pricing-info .service-features li::before {
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    left: 0; 
+    left: 0;
     width: 21px;
     height: 21px;
 }
 
 section.pricing-info button {
-    border-radius:9px;
+    border-radius: 9px;
     padding: 13px 22px;
     font-size: 16px;
     width: 100%;
@@ -352,10 +416,10 @@ section.pricing-info button {
 
 section.features {
     margin-top: 150px;
+    /* background-color: orange; */
 }
 
 section.features .feature {
-    width: 75%;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
@@ -380,7 +444,7 @@ section.features .feature-tag {
 }
 
 section.features .feature-header {
-    font-family: 'Poppins';
+    font-family: 'Inter';
     display: flex;
     gap: 50px;
     margin-bottom: 30px;
@@ -410,7 +474,7 @@ section.features .feature-header h1 span {
     color: var(--primary);
 }
 
-section.features .feature-header > div {
+section.features .feature-header>div {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -431,7 +495,7 @@ section.features .subfeature {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 section.features .subfeature .title {
@@ -509,7 +573,7 @@ section.features .user-feedback-info {
     gap: 10px;
 }
 section.features .user-feedback-info .name, section.features .user-feedback-info .description {
-    margin: 0px; 
+    margin: 0px;
     color: var(--text-light-primary);
 }
 section.features .user-feedback-info .name {
@@ -541,6 +605,73 @@ section.features h1 .underline::after {
     width: 150px;
 }
 
+section.frequently-asked-questions {}
+
+section.frequently-asked-questions h1 {
+    font-weight: 600;
+    color: #454545;
+    font-size: 26px;
+}
+
+section.frequently-asked-questions .questions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+section.frequently-asked-questions .question-wrapper {
+    border-radius: 15px;
+    border: #DDDDDD 1px solid;
+    padding: 27px 36px;
+    box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.05);
+    font-weight: 500;
+}
+
+@media (max-width: 612px) {
+
+    section.frequently-asked-questions .questions {
+        align-items: center;
+    }
+
+    section.frequently-asked-questions .question-wrapper {
+        width: 70%;
+    }
+}
+
+section.frequently-asked-questions .question-wrapper .answer {
+    display: none;
+    max-width: 100%;
+}
+
+section.frequently-asked-questions .question-wrapper.opened .answer {
+    display: block;
+}
+
+section.frequently-asked-questions .question-wrapper .question {
+    color: #353535;
+}
+
+section.frequently-asked-questions .question-wrapper .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.frequently-asked-questions .question-wrapper .header .open-button {
+    cursor: pointer;
+}
+
+section.frequently-asked-questions .question-wrapper.opened .header .open-button {
+    transform: rotate(180deg);
+}
+
+section.frequently-asked-questions .question-wrapper .answer {
+    color: #8F8F8F;
+    font-size: 14px;
+}
+
+
 
 
 footer {
@@ -554,71 +685,72 @@ footer {
     font-weight: 500;
     font-family: 'Inter';
     background-color: #282828;
-  }
+    width: 96%;
+    margin-top: 100px;
+}
 
-  footer .links .link {
+footer .links .link {
     color: white;
     font-weight: 400;
-  }
+}
 
-  footer .links .link a {
+footer .links .link a {
     text-decoration: none !important;
     color: inherit;
-  }
+}
 
-  footer .links .link a:hover {
+footer .links .link a:hover {
     color: rgb(156, 154, 154);
-  }
+}
 
-  footer a:visited {
+footer a:visited {
     color: inherit;
     background-color: reds;
     text-decoration: none;
-  }
+}
 
-  footer .links-wrapper {
+footer .links-wrapper {
     display: flex;
     gap: 50px;
-  }
+}
 
-  footer .links-section {
+footer .links-section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
+}
 
-  footer .copyright {
+footer .copyright {
     display: none;
-  }
+}
 
-  footer .logo {
+footer .logo {
     height: 39px;
-  }
+}
 
-  footer .copyright span, footer .links-wrapper .title {
+footer .copyright span, footer .links-wrapper .title {
     color: #7B7B7B;
-  }
+}
 
-  /* SM */
-  @media (min-width: 576px) {
+@media (min-width: 576px) {
 
     footer {
-      display: flex;
-      padding: 30px;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-evenly;
-      font-weight: 500;
-      font-family: 'Inter';
-      background-color: #282828;
+        display: flex;
+        padding: 30px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        font-weight: 500;
+        font-family: 'Inter';
+        background-color: #282828;
     }
 
-  
+
     footer .copyright {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 3px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
     }
 
-  }
+}
