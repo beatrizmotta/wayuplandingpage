@@ -17,6 +17,7 @@
 html, body {
     padding: 0;
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 /* .sm-hide {
@@ -109,6 +110,10 @@ header nav li a {
     font-size: 17px;
 }
 
+header nav li a:visited {
+    color: black; 
+}
+
 button {
     background-color: var(--primary);
     color: white;
@@ -185,9 +190,9 @@ section {
 
 section:first-of-type figure {
     margin: 0;
-    width: 75%;
+    width: 100%;
     margin: 70px 0 70px 0;
-    padding: 50px;
+    /* padding: 50px; */
 }
 
 @media (min-width: 613px) {
@@ -217,6 +222,7 @@ section:first-of-type .users-sample {
     gap: 15px;
     justify-content: center;
     color: var(--text-light-secondary);
+    margin-bottom: 80px;
 }
 
 section:first-of-type .users-sample p {
@@ -273,9 +279,6 @@ section.pricing-info .card {
 
 
 
-section.pricing-info:nth-of-type(2) {
-    margin-top: 80px;
-}
 
 
 section.pricing-info .label, .tag {
@@ -453,7 +456,7 @@ section.features .feature-header {
 }
 
 section.features .feature-header h1 {
-    font-size: 26px;
+    font-size: 33px;
     text-align: left;
     margin-top: 0px;
 }
@@ -617,8 +620,10 @@ section.frequently-asked-questions .questions {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
 }
+
 
 section.frequently-asked-questions .question-wrapper {
     border-radius: 15px;
@@ -626,6 +631,10 @@ section.frequently-asked-questions .question-wrapper {
     padding: 27px 36px;
     box-shadow: 0px 4px 32px 0px rgba(0, 0, 0, 0.05);
     font-weight: 500;
+}
+
+section.frequently-asked-questions .question-wrapper .header {
+    cursor: pointer;
 }
 
 @media (max-width: 612px) {
@@ -641,7 +650,9 @@ section.frequently-asked-questions .question-wrapper {
 
 section.frequently-asked-questions .question-wrapper .answer {
     display: none;
-    max-width: 100%;
+    max-width: 90%;
+    color: #8F8F8F;
+    font-size: 14px;
 }
 
 section.frequently-asked-questions .question-wrapper.opened .answer {
@@ -660,15 +671,11 @@ section.frequently-asked-questions .question-wrapper .header {
 
 section.frequently-asked-questions .question-wrapper .header .open-button {
     cursor: pointer;
+    user-select: none;
 }
 
 section.frequently-asked-questions .question-wrapper.opened .header .open-button {
     transform: rotate(180deg);
-}
-
-section.frequently-asked-questions .question-wrapper .answer {
-    color: #8F8F8F;
-    font-size: 14px;
 }
 
 
@@ -676,17 +683,19 @@ section.frequently-asked-questions .question-wrapper .answer {
 
 footer {
     display: flex;
+    box-sizing: border-box;
     padding: 30px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
     /* justify-content: space-evenly; */
+    width: 100%;
     font-weight: 500;
     font-family: 'Inter';
     background-color: #282828;
-    width: 96%;
     margin-top: 100px;
+    flex-grow: 1;
 }
 
 footer .links .link {
@@ -705,7 +714,7 @@ footer .links .link a:hover {
 
 footer a:visited {
     color: inherit;
-    background-color: reds;
+    background-color: red;
     text-decoration: none;
 }
 
